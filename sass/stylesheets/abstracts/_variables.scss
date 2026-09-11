@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+    $font-primary: "Poppins", sans-serif;
+    $font-title:"Merriweather", serif;
+
+
+/// Copy text color
+/// @type Color
+ $white:#FFF;
+ $gray:#ABABAB;
+ $gray-light:#E1E1E1 ;
+ $pink:#DB2A6B;
+ $purple:#6E1FED;
+ $orange:#FF7E29;
+ $blue:#60D3D9;
+ $yellow:#F4B840;
+ $black:#2B2D38;
+
+/// Main brand color
+/// @type Color
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1300px !default;
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'https://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
