@@ -1,3 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+@use "../abstracts/" as vp;
+.button{
+    @include vp.button(vp.$pink);
+}

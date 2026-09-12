@@ -1,3 +1,33 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+ @use "../abstracts/" as vp;
+header{
+    padding-top: 37px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 89px;
+    nav{
+        ul{
+            @include vp.reset-list();
+            gap: 48px;
+            a{
+                &:hover,&.active{
+                    color:vp.$white;
+                    position: relative;
+                    &::before{
+                        content: "";
+                        width: 32px;
+                        height: 4px;
+                        background-color: vp.$pink;
+                        position: absolute;
+                        top: 25px;
+                        left: 0;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

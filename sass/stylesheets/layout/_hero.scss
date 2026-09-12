@@ -1,0 +1,98 @@
+@use "../abstracts/" as vp;
+.hero{
+    display: flex;
+    &_content{
+        width: 50%;
+        
+        h1{
+            font-family: vp.$font-title;
+            color: vp.$white;
+            font-size: 6rem;
+            line-height: 7rem;
+            font-weight: 600;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        p{
+           color: rgba(vp.$white, 0.5); 
+           font-size: 2rem;
+           margin: 0;
+           width: 100%;
+           max-width: 45ch;
+           line-height: 3rem;
+           font-weight: 300;
+           text-align: justify;
+           margin-bottom: 20px;
+        }
+        div{
+            ul{
+                @include vp.reset-list();
+                justify-content: flex-start;
+                gap: 3.2rem;
+                li{
+                    &:nth-of-type(2){
+                        a{
+                            display:inline-flex;
+                            align-items: center;
+                            color: white;
+                            gap: 0.8rem;
+                            text-decoration: underline;
+                            font-weight: 600;
+                            
+                            &:hover{
+                                color: vp.$gray;
+                            }
+                            
+                        }
+
+                   }
+                       
+                }
+            }
+        }
+    }
+    &_image{
+        width: 50%;
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(3,240px);
+        grid-template-rows: repeat(4,180px);
+        gap: 1.6rem;
+        div{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                border-radius: 12px;
+                
+
+            }
+            &:nth-child(1){
+               grid-area: 1 / 1 / span 3 / span 1;
+            }
+            &:nth-child(2){
+                grid-area: 1 / 2 / span  1 / span 1;
+            }
+            &:nth-child(4){
+                grid-area: 4 / 1 / span  1 / span 1;
+            }
+            &:nth-child(3){
+                grid-area: 1 / 3 / span  4 / span 1;
+            }
+            &:nth-child(5){
+                grid-area: 2 / 2 / span  3 / span 1;
+            }
+        }
+
+
+    }
+
+}
