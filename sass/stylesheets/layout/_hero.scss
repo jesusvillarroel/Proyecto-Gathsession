@@ -12,6 +12,7 @@
             font-weight: 600;
             margin: 0;
             margin-bottom: 30px;
+            margin-top: 1.8rem;
         }
         p{
            color: rgba(vp.$white, 0.5); 
@@ -30,6 +31,11 @@
                 justify-content: flex-start;
                 gap: 3.2rem;
                 li{
+                    a{
+                        &.button:hover{
+                            color: vp.$gray;
+                        }
+                    }
                     &:nth-of-type(2){
                         a{
                             display:inline-flex;
@@ -41,6 +47,7 @@
                             
                             &:hover{
                                 color: vp.$gray;
+                                text-decoration: none;
                             }
                             
                         }
@@ -55,44 +62,80 @@
         width: 50%;
         flex: 1;
         display: grid;
-        grid-template-columns: repeat(3,240px);
-        grid-template-rows: repeat(4,180px);
+        grid-template-columns: repeat(3,13rem);
+        justify-content: center;
         gap: 1.6rem;
-        div{
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 60px;
+        position: relative;
+        
+        &::before{
+            position: absolute;
+            content: "";
+            top: 90%;
+            left: 75%;
+            transform: translate(-50%,-50%) rotate(-55deg);
+            width: 70rem;
+            height: 70rem;
+            border:1px solid rgba(vp.$gray-light, 0.25);
+            border-left: 1px rgba(vp.$gray-light, 0.25);
+            border-right: 1px solid rgba(vp.$gray-light, 0.25);
+            border-bottom: 1px solid transparent;
+            border-radius: 50%;
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            top: 103%;
+            left: 82%;
+            transform: translate(-50%,-50%) rotate(-54deg);
+            width: 50rem;
+            height: 50rem;
+            border-top:1px solid rgba(vp.$gray-light, 0.25);
+            border-left: 1px rgba(vp.$gray-light, 0.5);
+            border-right: 1px solid rgba(vp.$gray-light, 0.25);
+            border-bottom: 1px solid transparent;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        &_1{
+          @include vp.image-position(vp.$purple);
+          grid-area: 1 / 1 / span 3 / span 1;
+        }
+        &_2{
+            @include vp.image-position(vp.$blue);
+            grid-area: 1 / 2/ span 1 / span 1;
+            height: 14rem;
             img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-                border-radius: 12px;
-                
-
-            }
-            &:nth-child(1){
-               grid-area: 1 / 1 / span 3 / span 1;
-            }
-            &:nth-child(2){
-                grid-area: 1 / 2 / span  1 / span 1;
-            }
-            &:nth-child(4){
-                grid-area: 4 / 1 / span  1 / span 1;
-            }
-            &:nth-child(3){
-                grid-area: 1 / 3 / span  4 / span 1;
-            }
-            &:nth-child(5){
-                grid-area: 2 / 2 / span  3 / span 1;
+                top: 38%;
+                transform: translateX(-52%) scale(1.8);
             }
         }
-
-
+        &_3{
+            @include vp.image-position(vp.$yellow);
+            grid-area: 1 / 3/ span 4/ span 1;
+            align-self: center;
+            img{
+                top: 10%;
+                transform: translateX(-73%) scale(1.6);
+            }
+          
+        }
+        &_4{
+            @include vp.image-position(vp.$pink);
+            grid-area: 4 / 1 / span 1 / span 1;
+            height: 14rem;
+            img{
+                top: -70%;
+                transform: translateX(-48%) scale(1.9);
+            }
+        }
+        &_5{
+            @include vp.image-position(vp.$orange);
+            grid-area: 2 / 2 / span 3 / span 1;
+            img{
+                top: 27%;
+            }
+        }
+       
     }
 
 }
